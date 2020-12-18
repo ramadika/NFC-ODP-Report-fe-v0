@@ -1,0 +1,149 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,900&display=swap");
+
+.imgBG {
+  width: 100%;
+  height: auto;
+  filter: brightness(50%);
+}
+
+.containLogin {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 60%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+
+.Login-custom {
+  font-family: "Poppins", sans-serif;
+}
+
+.wlcmCol {
+  border-radius: 10px 0px 0px 10px;
+  -moz-border-radius: 10px 0px 0px 10px;
+  -webkit-border-radius: 10px 0px 0px 10px;
+  border: 0px solid #ff7979;
+  padding-top: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wlcmCol h2 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 25pt;
+  color: #f5f6fa;
+  font-weight: bold;
+}
+
+.wlcmCol h6 {
+  font-size: 10pt;
+  font-weight: 200;
+  color: #a2a4ac;
+}
+
+.wlcmCol h4 {
+  margin-top: 15%;
+  font-family: "Yellowtail", cursive;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 24pt;
+  letter-spacing: 2px;
+  color:#f5f6fa;
+}
+
+.addressCPY {
+  margin-top: -3%;
+}
+
+.lgnCol {
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid #f5f6fa;
+  padding: 10%;
+  padding-top: 10%;
+  padding-bottom: 15%;
+}
+
+.lgnCol h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color:#f5f6fa;
+}
+
+.Login-custom > div > h5 {
+  font-weight: bold;
+  font-size: 8pt;
+  margin-left: 15px;
+  color:#f5f6fa;
+}
+
+::placeholder {
+  font-size: 8pt;
+  letter-spacing: 1px;
+  color: #ced6e0;
+}
+
+.usPsLog{
+  color: #ced6e0;
+  font-size: 8pt;
+  margin-left: 10px;
+  margin-bottom:-10px;
+}
+
+.inputLogin-custom > input[type="text"] {
+  width: 200pt;
+  padding: 8px 18px;
+  margin: 13px 0;
+  border-radius: 15px 15px 15px 15px;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
+  border: 1px solid #f5f6fa;
+}
+
+.inputLogin-custom > input[type="password"] {
+  width: 200pt;
+  padding: 8px 18px;
+  margin: 13px 0;
+  margin-bottom: 13%;
+  border-radius: 15px 15px 15px 15px;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
+  border: 1px solid #f5f6fa;
+}
+
+.btnLogin-custom {
+  width: 200pt;
+  padding: 10px 89px;
+  margin-top: 20px;
+  background-color: transparent;
+  font-weight: 900;
+  border-radius: 33px 33px 33px 33px;
+  -moz-border-radius: 33px 33px 33px 33px;
+  -webkit-border-radius: 33px 33px 33px 33px;
+  border: 1px solid #f5f6fa;
+  color:#f5f6fa;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.Login-custom a:hover{
+  text-decoration: none;
+  color:#c4c2c2;
+  transition: 0.3s;
+}
+
+.Login-custom img {
+  position: absolute;
+  left: 150%;
+  top: 4%;
+}

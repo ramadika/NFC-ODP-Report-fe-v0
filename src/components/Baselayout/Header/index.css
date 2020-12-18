@@ -1,0 +1,53 @@
+.Nav-Bar {
+    background-image: url(/src/assets/thomas-jensen-iSh9yqYSd08-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: 50% 40%;
+    filter: grayscale(70%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 8pt;
+    font-family: "Ubuntu", sans-serif;
+    /* margin-bottom: 10%; */
+  }
+  
+  .navbar-light .navbar-brand {
+    color: #ffffff;
+  }
+  
+  .navbar-light .navbar-nav .nav-link.active {
+    color: #dcdde1;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+
+  .nav-link:hover {
+    color: aqua;
+    transition: 0.3s;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #a7a9af;
+    transition: 0.3s;
+  }
+  
+  .navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  .navbar .navbar-toggler {
+    border-color: rgb(255, 255, 255);
+  }
+
+  .lout{
+      margin-left: auto;
+  }
+
+  @media (min-width: 300px) and (max-width: 812px) {
+    .lout{
+        margin-right: auto;
+    }
+  }
+  

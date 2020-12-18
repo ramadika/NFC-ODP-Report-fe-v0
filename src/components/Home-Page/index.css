@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,900&display=swap");
+
+.imgBg {
+  width: 100%;
+  height: auto;
+}
+
+.YourThingsApp {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+}
+
+.YourThingsApp {
+  font-family: "Poppins", sans-serif;
+}
+
+.YourThingsApp h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30pt;
+  font-style: italic;
+  text-align: center;
+  margin: 5%;
+  color: #343a40;
+}
+
+.YourThingsApp a {
+  color: #192a56;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14pt;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 6%;
+  margin-left: 10%;
+  padding: 5%;
+  border: 1px solid #343a40;
+}
+
+.YourThingsApp a:hover {
+  text-decoration: none;
+  color: #c7c5c5;
+  transition: 0.3s;
+  border: 1px solid #89939c;
+}
+
+.lgout {
+  position: absolute;
+  top: 6.5%;
+  right: 5%;
+}
+
+.lgout a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #343a40;
+  font-size: 12pt;
+}
+
+.lgout a:hover {
+  text-decoration: none;
+  color: #c7c5c5;
+  transition: 0.3s;
+}
+
+/* @media (min-width: 300px) and (max-width: 812px) {
+  .imgBg {
+    margin-top: 8%;
+  }
+} */
