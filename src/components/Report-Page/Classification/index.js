@@ -3,6 +3,7 @@ import React from 'react'
 import { PieChart } from 'react-minimal-pie-chart'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+// Internals
 
 export default function index() {
     return (

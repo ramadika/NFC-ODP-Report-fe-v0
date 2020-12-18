@@ -1,17 +1,23 @@
-.fDataPage {
+.detailPage {
   font-family: "Poppins", sans-serif;
 }
 
-.fDataTitle {
+.detailTitle {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.fData .table {
+.detailData .table {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
+  text-align: center;
+}
+
+.detailCust .table {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   border: 1px solid #343a40;
 }

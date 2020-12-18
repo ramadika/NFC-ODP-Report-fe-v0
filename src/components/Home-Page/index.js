@@ -13,9 +13,9 @@ export default function index() {
             <img src={ImgBg} alt="BgImg" className="imgBg"></img>
             <div className=" YourThingsApp">
                 <h1>YourThings</h1>
-                <div>
+                {/* <div>
                     <NavLink className="btn" to="/AdminPage">Admin</NavLink>
-                </div>
+                </div> */}
                 <div>
                     <NavLink className="btn" to="/ReportPage">Report</NavLink>
                 </div>
