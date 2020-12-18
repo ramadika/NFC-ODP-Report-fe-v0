@@ -1,11 +1,29 @@
 // Dependencies
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 // Internals
+import {DataContext} from 'components/Context'
 import 'components/FieldData-Page/DetailField-Page/index.css'
 
-export default function index() {
+export default function Index(props) {
+    const context = useContext(DataContext);
+
+    const [theProd, setTheProd] = useState([]);
+    
+    const getProduct = () =>{
+        if(props.match.params.id){
+            // const res = context.products;
+            const data = context.products.filter(item =>{
+                return item.ODP_ID === props.match.params.id
+            })
+            setTheProd({theProd: data})
+        }
+    }
+    useEffect(() => {
+        getProduct();
+    })
+
     var latitude = -6.2773911;
     var longitude = 107.12830389999999;
     var GIS = `https://www.google.com/maps/?q=${latitude},${longitude}`;
@@ -14,7 +32,7 @@ export default function index() {
         <div className="detailPage">
             <Container className="mt-5">
                 <Row className="detailTitle mb-3">
-                    <h1>Detail ODP - E2000020271202362150D3561</h1>
+                    <h1>Detail ODP - {theProd.ODP_ID}</h1>
                 </Row>
                 <Row className="detailData">
                     <div className="table-responsive">

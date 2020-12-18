@@ -43,7 +43,7 @@ export default function Index() {
                                             <td>{prod.Optical_power} db</td>
                                             <td><a href={prod.href}>{prod.lat} °, {prod.long} °</a></td>
                                             <td>{prod.Tanggal_instalasi}</td>
-                                            <td><NavLink className="btn btn-outline-info" to="/DetailPage">Detail</NavLink></td>
+                                            <td><NavLink className="btn btn-outline-info" to={`/DetailPage/${prod.ODP_ID}`}>Detail</NavLink></td>
                                         </tr>
                                     ))
                                 }

@@ -31,7 +31,7 @@ ReactDOM.render(
           <Route path="/AdminPage" component={AdminPage} />
           <Route path="/ReportPage" component={ReportPage} />
           <Route path="/FieldDataPage" component={FieldDataPage} />
-          <Route path="/DetailPage/:ODP_ID" component={DetailPage} />
+          <Route path="/DetailPage/:id" component={DetailPage} />
         </DataProvider>
       </BaseLayout>
     </Switch>
