@@ -13,26 +13,26 @@ export default function Index(props) {
     
     const getProduct = () =>{
         if(props.match.params.id){
-            // const res = context.products;
-            const data = context.products.filter(item =>{
+            const res = context.products;
+            const data = res.filter(item =>{
                 return item.ODP_ID === props.match.params.id
             })
-            setTheProd({theProd: data})
+            setTheProd(data);
         }
     }
     useEffect(() => {
         getProduct();
     })
 
-    var latitude = -6.2773911;
-    var longitude = 107.12830389999999;
-    var GIS = `https://www.google.com/maps/?q=${latitude},${longitude}`;
-
     return (
         <div className="detailPage">
             <Container className="mt-5">
                 <Row className="detailTitle mb-3">
-                    <h1>Detail ODP - {theProd.ODP_ID}</h1>
+                    {
+                        theProd.map(item =>(
+                            <h1>Detail ODP - {item.ODP_ID}</h1>
+                        ))
+                    }
                 </Row>
                 <Row className="detailData">
                     <div className="table-responsive">
@@ -46,12 +46,16 @@ export default function Index(props) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>8 port</td>
-                                    <td>-19 db</td>
-                                    <td><a href={GIS}>-6.2773911 °, 107.12830389999999 °</a></td>
-                                    <td>2020-11-18</td>
-                                </tr>
+                                {
+                                    theProd.map(item =>(
+                                        <tr>
+                                            <td>{item.Kapasitas} port</td>
+                                            <td>{item.Optical_power} db</td>
+                                            <td><a href={item.href}>{item.lat} °, {item.long} °</a></td>
+                                            <td>{item.Tanggal_instalasi}</td>
+                                        </tr>
+                                    ))
+                                }
                             </tbody>
                         </table>
                     </div>
