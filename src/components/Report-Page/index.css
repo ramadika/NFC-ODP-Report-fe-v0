@@ -1,0 +1,57 @@
+.reportPage {
+  font-family: "Poppins", sans-serif;
+}
+
+.reportTitle h1 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reportPage .odpAmnt {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #192a56;
+  border: 1px solid #343a40;
+}
+
+.reportMap h3 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.reportData {
+  margin-top: -10%;
+}
+
+.reportData h3 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.reportStandby h3 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.reportStandby .table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  border: 1px solid #343a40;
+}
