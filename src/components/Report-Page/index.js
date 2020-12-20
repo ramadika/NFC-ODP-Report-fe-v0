@@ -13,7 +13,7 @@ export default class indexClass extends Component {
     static contextType = DataContext;
 
     render() {
-        const {products} = this.context;
+        const {products, standByPort} = this.context;
         var ODPcount = products.length;
 
         return (
@@ -48,7 +48,7 @@ export default class indexClass extends Component {
                             <tbody>
                                 <tr>
                                     <th scope="row">Standby</th>
-                                    <td>3200 port</td>
+                                    <td>{standByPort} port</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Cost</th>

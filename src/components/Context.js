@@ -83,31 +83,32 @@ export class DataProvider extends Component {
             {
                 "KlasifikasiODP_ID": 1,
                 "Klasifikasi_Nama": "Full Port",
-                "Jumlah_ODP": 500,
+                "Jumlah_ODP": 0,
             },
             {
                 "KlasifikasiODP_ID": 2,
                 "Klasifikasi_Nama": "Medium Port",
-                "Jumlah_ODP": 200,
+                "Jumlah_ODP": 0,
             },
             {
                 "KlasifikasiODP_ID": 3,
                 "Klasifikasi_Nama": "Low Port",
-                "Jumlah_ODP": 200,
+                "Jumlah_ODP": 3,
             },
             {
                 "KlasifikasiODP_ID": 4,
                 "Klasifikasi_Nama": "Empty Port",
-                "Jumlah_ODP": 100,
+                "Jumlah_ODP": 0,
             },
-        ]
+        ],
+        standByPort: 18,
     }
 
     render() {
-        const {products, klasifikasiODP} = this.state;
+        const {products, klasifikasiODP, standByPort} = this.state;
         return (
             <DataContext.Provider 
-            value={{products, klasifikasiODP}}>
+            value={{products, klasifikasiODP, standByPort}}>
                 {this.props.children}
             </DataContext.Provider>
         )

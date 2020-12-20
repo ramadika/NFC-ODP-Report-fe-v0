@@ -9,21 +9,54 @@ import {DataContext} from 'components/Context'
 export default class indexClass extends Component {
     static contextType = DataContext;
 
+    state = {
+        data: [],
+    }
+
     render() {
-        const {klasifikasiODP} = this.context;
+        const {klasifikasiODP, products} = this.context;
+        var {data} = this.state;
+
+        var ODPcount = products.length;
+
+        klasifikasiODP.map((obj) => {
+          var randomColor = "#000000".replace(/0/g, function () {
+            return (~~(Math.random() * 16)).toString(16);
+          });
+          
+          var newNum = obj.Jumlah_ODP / ODPcount * 100;
+      
+          let insert = {
+            color: randomColor,
+            title: obj.Klasifikasi_Nama,
+            value: newNum,
+          };
+      
+          data.push(insert); 
+        });
 
         return (
             <div>
                 <Row>
                     <Col>
                         <PieChart
-                            data={[
-                                { title: 'Full Port', value: 50, color: '#E38627' },
-                                { title: 'Medium Port', value: 20, color: '#C13C37' },
-                                { title: 'Low Port', value: 20, color: '#6A2135' },
-                                { title: 'Empty Port', value: 10, color: '#6a2121' },
-                            ]}
-                            labelPosition={50}
+                            animate
+                            animationDuration={500}
+                            animationEasing="ease-out"
+                            center={[50, 50]}
+                            lengthAngle={360}
+                            paddingAngle={0}
+                            radius={50}
+                            startAngle={0}
+                            viewBoxSize={[100, 100]}
+                            label={(data) => data.dataEntry.title}
+                            labelPosition={70}
+                            labelStyle={{
+                              fontSize: "4px",
+                              fontColor: "FFFFFA",
+                              fontWeight: "400",
+                            }}
+                            data = {data}
                         />
                     </Col>
                     <Col>
