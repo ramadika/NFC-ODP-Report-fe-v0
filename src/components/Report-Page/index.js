@@ -37,7 +37,7 @@ export default function index() {
                 </Row>
                 <Row className="reportStandby">
                     <h3>Standby ODP</h3>
-                    <table class="table table-borderless">
+                    <table className="table table-borderless">
                         <tbody>
                             <tr>
                                 <th scope="row">Standby</th>

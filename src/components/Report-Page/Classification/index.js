@@ -21,7 +21,7 @@ export default function index() {
                     />
                 </Col>
                 <Col>
-                    <table class="table table-borderless">
+                    <table className="table table-borderless">
                         <tbody>
                             <tr>
                                 <th scope="row">Full Port</th>
