@@ -1,7 +1,9 @@
+// Dependencies
 import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { NavLink } from 'react-router-dom'
+// Internals
 import {DataContext} from 'components/Context'
 import 'components/FieldData-Page/index.css'
 

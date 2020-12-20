@@ -78,14 +78,36 @@ export class DataProvider extends Component {
                     "Layanan": "Triple Play",
                 }]
             },
+        ],
+        klasifikasiODP: [
+            {
+                "KlasifikasiODP_ID": 1,
+                "Klasifikasi_Nama": "Full Port",
+                "Jumlah_ODP": 500,
+            },
+            {
+                "KlasifikasiODP_ID": 2,
+                "Klasifikasi_Nama": "Medium Port",
+                "Jumlah_ODP": 200,
+            },
+            {
+                "KlasifikasiODP_ID": 3,
+                "Klasifikasi_Nama": "Low Port",
+                "Jumlah_ODP": 200,
+            },
+            {
+                "KlasifikasiODP_ID": 4,
+                "Klasifikasi_Nama": "Empty Port",
+                "Jumlah_ODP": 100,
+            },
         ]
     }
 
     render() {
-        const {products} = this.state;
+        const {products, klasifikasiODP} = this.state;
         return (
             <DataContext.Provider 
-            value={{products}}>
+            value={{products, klasifikasiODP}}>
                 {this.props.children}
             </DataContext.Provider>
         )
