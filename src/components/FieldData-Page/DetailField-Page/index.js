@@ -68,6 +68,7 @@ export default class Index extends Component {
                         </div>
                     </Row>
                     <Row className="detailCust">
+                        <h3>Detail Customer</h3>
                         <div className="table-responsive">
                             <table className="table table-borderless">
                                 <thead>

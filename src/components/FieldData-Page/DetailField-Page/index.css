@@ -15,9 +15,34 @@
   text-align: center;
 }
 
+.detailCust h3 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .detailCust .table {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   border: 1px solid #343a40;
+}
+
+@media (min-width: 300px) and (max-width: 812px) {
+  .detailTitle h1{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 9pt;
+  }
+  .detailData .table {
+    font-size: 6pt;
+  }
+  .detailCust .table {
+    font-size: 6pt;
+    margin-bottom: 10%;
+  }
 }
