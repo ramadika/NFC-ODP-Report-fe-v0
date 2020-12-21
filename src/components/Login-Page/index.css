@@ -150,7 +150,9 @@
 
 @media (min-width: 300px) and (max-width: 812px) {
   .imgBG {
-    width: 110%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    width: 100%;
     height: 625px;
     object-fit: cover;
   }
@@ -162,6 +164,7 @@
     margin-top: 5%;
     padding-right: 100%;
     padding-bottom: 5%;
+    margin-left: -5%;
   }
   .inputLogin-custom > input[type="text"] {
     width: 120pt;

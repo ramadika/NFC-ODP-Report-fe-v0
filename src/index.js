@@ -7,7 +7,7 @@ import {DataProvider} from 'components/Context'
 
 // Internals
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css' 
 
 // import App from './App';
 import BaseLayout from 'components/Baselayout'
