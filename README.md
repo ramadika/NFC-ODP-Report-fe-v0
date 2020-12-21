@@ -13,7 +13,7 @@
 - [Release web](#release-web)
 - [Requirements](#requirements)
 - [Usage for Development](#usage-for-development)
-- [Screenshots](#screenshots)
+<!-- - [Screenshots](#screenshots) -->
 - [Attributed](#attributed)
 
 ## Introduction
