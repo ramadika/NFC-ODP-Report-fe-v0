@@ -39,7 +39,7 @@
 3. Open the folder and type `npm install` for install dependencies
 4. Type `npm start` for run this app.
 
-## Screenshots
+<!-- ## Screenshots
 <div align="center">
     <img width="200" src="./src/app-screenshots/Home.png">
     <img width="200" src="./src/app-screenshots/My Pokemon.png">
@@ -52,7 +52,7 @@
     <img width="200" src="./src/app-screenshots/Enter Nickname.png">
     <img width="200" src="./src/app-screenshots/Get the Pokemon.png">
     <img width="200" src="./src/app-screenshots/Successfully Added.png">
-</div>
+</div> -->
 
 ## Attributed
 
