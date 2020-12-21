@@ -55,3 +55,16 @@
   text-align: center;
   border: 1px solid #343a40;
 }
+
+@media (min-width: 300px) and (max-width: 812px) {
+  .reportPage .odpAmnt {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  .reportData {
+    margin-top: -45%;
+  }
+  .reportStandby .table {
+    font-size: 8pt;
+  }
+}

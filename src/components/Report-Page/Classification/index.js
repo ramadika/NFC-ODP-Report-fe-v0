@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 // Internals
 import {DataContext} from 'components/Context'
+import 'components/Report-Page/Classification/index.css'
 
 export default class indexClass extends Component {
     static contextType = DataContext;
@@ -36,7 +37,7 @@ export default class indexClass extends Component {
         });
 
         return (
-            <div>
+            <div className="clasfc">
                 <Row>
                     <Col>
                         <PieChart
