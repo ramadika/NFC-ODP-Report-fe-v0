@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import {DataProvider} from 'components/Context'
 
 // Internals
@@ -22,7 +22,7 @@ ReactDOM.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
-  <BrowserRouter>
+  <Router>
     <Switch>
       <Route exact path="/" component={Login}/>
       <Route path="/HomePage" component={HomePage} />
@@ -35,7 +35,7 @@ ReactDOM.render(
         </DataProvider>
       </BaseLayout>
     </Switch>
-  </BrowserRouter>,
+  </Router>,
   document.getElementById('root')
 );
 
