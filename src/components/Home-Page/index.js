@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom'
 // import Navbar from 'react-bootstrap/Navbar'
 // import Nav from 'react-bootstrap/Nav'
 // Internals
-import ImgBg from 'assets/timj-ots0EOYuGtU-unsplash.jpg'
-import 'components/Home-Page/index.css'
+import ImgBg from 'assets/timj-ots0EOYuGtU-unsplash-removebg.png'
+import 'components/Home-Page/index.css' 
 
 export default function index() {
     return (

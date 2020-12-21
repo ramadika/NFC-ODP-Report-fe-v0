@@ -65,8 +65,32 @@
   transition: 0.3s;
 }
 
-/* @media (min-width: 300px) and (max-width: 812px) {
+@media (min-width: 300px) and (max-width: 812px) {
   .imgBg {
-    margin-top: 8%;
+    position: absolute;
+    bottom:0px;
   }
-} */
+  .YourThingsApp h1 {
+    font-size: 20pt;
+  }
+  .YourThingsApp a {
+    color: #192a56;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14pt;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 16%;
+    margin-left: 10%;
+    padding: 5%;
+    border: 1px solid #343a40;
+  }
+  .lgout {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+  }
+  .lgout a{
+    color: #c7c5c5;
+  }
+}
