@@ -147,3 +147,41 @@
   left: 150%;
   top: 4%;
 }
+
+@media (min-width: 300px) and (max-width: 812px) {
+  .imgBG {
+    width: 110%;
+    height: 625px;
+    object-fit: cover;
+  }
+  .wlcmCol h4 {
+    display: none;
+  }
+  .lgnCol {
+    width: 10%;
+    margin-top: 5%;
+    padding-right: 100%;
+    padding-bottom: 5%;
+  }
+  .inputLogin-custom > input[type="text"] {
+    width: 120pt;
+    padding: 8px 18px;
+    margin: 13px 0;
+  }
+  .inputLogin-custom > input[type="password"] {
+    width: 120pt;
+    padding: 8px 18px;
+    margin: 13px 0;
+    margin-bottom: 13%;
+  }
+  .btnLogin-custom {
+    width: 100pt;
+    padding-top: 10pt;
+    padding-left: 2pt;
+    padding-right: 2pt;
+    margin-top: 20px;
+  }
+  .Login-custom a{
+    font-size: 9pt;
+  }
+}
