@@ -1,4 +1,4 @@
-<h1 align="center">Pokemon - Web App</h1>
+<h1 align="center">ODP Report - Web App</h1>
 <p align="center">
   <img width="250" src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png"/>
 </p>
@@ -17,22 +17,17 @@
 - [Attributed](#attributed)
 
 ## Introduction
-<b>Pokemon - Web App</b> is an web-based application to catch the Pokemon. There is a list of pokemon with their own unique moves that can be caught and then added to the catch list.
+<b>ODP Report - Web App</b> is an web-based application to see the report and mapping of ODP. There is a list of ODP with their own customer data that can be reported and then added to the report page.
 
 ## Features
-* User can see list of Pokemon
-* User can see all Pokemon that have been caught by him
-* Showing List of Pokemon's Names and a picture of the Pokemon
-* User also can see the Owned Total of all Pokemon that have been caught by him inside Pokemon List page
-* List of Pokemon can be clicked to see Pokemon detail
-* Inside the Pokemon detail page, user can see a picture of the Pokemon with its moves and types
-* There is a button to catch the Pokemon inside the Pokemon detail page
-* If success then user can give the Pokemon a nickname and add that Pokemon to `My Pokemon List’
-* Pokemon that have been caught by user can be seen inside My Pokemon List page
-* Pokemon that is on My Pokemon List also be possible to remove from the list
+* User can see list data of all ODP
+* User can see customer data / ODP
+* Displays the ODP mapping across Indonesia
+* User also can see the ODP classification based on the data of all ODP
+* There is information about standby port of all ODP
 
 ## Release-Web
-**Pokemon - Web App** can be accessed [here](https://ramadika.github.io/Pokemon-App/)
+**ODP Report - Web App** can be accessed [here](https://ramadika.github.io/ODP-Report/)
 
 ## Requirements
 * [`npm`](https://www.npmjs.com/get-npm)
@@ -40,7 +35,7 @@
 
 ## Usage for development
 1. Open your terminal or command prompt
-2. Type `git clone https://github.com/ramadika/Pokemon-App.git`
+2. Type `git clone https://github.com/ramadika/ODP-Report.git`
 3. Open the folder and type `npm install` for install dependencies
 4. Type `npm start` for run this app.
 
