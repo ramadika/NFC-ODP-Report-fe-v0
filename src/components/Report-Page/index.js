@@ -4,7 +4,9 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 // Internals
-import Map from 'components/Report-Page/Maps'
+// import Map from 'components/Report-Page/Maps'
+// import Mapbox from 'components/Report-Page/Maps/mapbox'
+import ReactMapbox from 'components/Report-Page/Maps'
 import Data from 'components/Report-Page/Classification'
 import {DataContext} from 'components/Context'
 import 'components/Report-Page/index.css'
@@ -66,7 +68,9 @@ export default class indexClass extends Component {
                     </Row>
                     <Row className="reportMap">
                         <h3>Sebaran ODP</h3>
-                        <Map />
+                        {/* <Map /> */}
+                        {/* <Mapbox /> */}
+                        <ReactMapbox /> 
                     </Row>
                     <Row className="mb-5 reportData">
                         <Col className="text-center d-flex align-items-center">

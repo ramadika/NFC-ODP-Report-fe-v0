@@ -1,29 +1,44 @@
-// Dependencies
-import React from 'react'
-import {GoogleMap, withScriptjs, withGoogleMap} from 'react-google-maps'
-// Internals
+import React, { Component } from 'react'
+import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import 'components/Report-Page/Maps/index.css'
 
-function Map(){
-    return (
-        <GoogleMap 
-            defaultZoom={10} 
-            defaultCenter={{ lat: -6.175110, lng: 106.865036 }} 
-        />
-    );
-}
+ 
+const Map = ReactMapboxGl({
+    accessToken:
+      'pk.eyJ1IjoicmFtYWRpa2ExMDUwIiwiYSI6ImNraXpkZzU4cTE2M3QycW15cnhrMG1ueXcifQ.s_vgxudeVqiQexpSPYsVHw'
+  });
 
-const WrappedMap = withScriptjs(withGoogleMap(Map))
+export default class reactMapbox extends Component {
+    constructor(props) {
+    super(props);
+      this.state = {
+        lng: 107.12830389999999,
+        lat: -6.2773911,
+        zoom: 13,
+        style: "mapbox://styles/mapbox/streets-v9",
+      };
+    }
 
-export default function Reactgooglemaps() {
-    return (
-        <div style={{width: '100vw', height: '75vh'}}>
-            <WrappedMap 
-            // AIzaSyAd2myu5NPRMQYGwtXfflLzj_U-A8sn3TI
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyCSgkONZR4dgCxmqpZgwqHuvDcE0Q5EKVA&callback=initMap`} 
-                loadingElement={<div style={{ height: "75%" }} />}
-                containerElement={<div style={{ height: "75%" }} />}
-                mapElement={<div style={{ height: "75%" }} />}
-            />
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                <Map
+                style= {this.state.style} 
+                containerStyle= {{
+                    height: '100vh',
+                    width: '83.5vw'
+                }} 
+                center= {[this.state.lng, this.state.lat]}
+                zoom= {[this.state.zoom]} 
+
+                className="mapContainer"
+                >
+                <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
+                    <Feature coordinates={[-6.2773911, 107.12830389999999]} />
+                </Layer>
+                </Map>
+            </div>
+        )
+    }
 }
