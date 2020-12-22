@@ -11,11 +11,35 @@ export default class indexClass extends Component {
     static contextType = DataContext;
     state = {
         number: 0,
+        odp:[],
+    }
+
+    fetchODP = () => {
+        fetch('http://localhost/backend/all-odp.php')
+        .then(response => {
+            response.json().then(function(data) {
+                if(data.success === 1){
+                    this.setState({
+                        odp:data.odp.reverse(),
+                    });
+                } 
+                else{
+                    this.context.post_show(false);
+                }               
+            }.bind(this));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
+    componentDidMount(){
+        this.fetchODP();
     }
     
     render() {
-        const {products} = this.context;
-        var {number} = this.state;
+        // const {products} = this.context;
+        var {number, odp} = this.state;
 
         return (
             <div className="fDataPage">
@@ -39,14 +63,14 @@ export default class indexClass extends Component {
                                 </thead>
                                 <tbody>
                                     {
-                                        products.map(prod =>(
-                                            <tr key={prod.id}>
+                                        odp.map(prod =>(
+                                            <tr key={prod.ODP_ID}>
                                                 <th scope="row">{number += 1}</th>
                                                 <td>{prod.ODP_ID}</td>
                                                 <td>{prod.Kapasitas} port</td>
-                                                <td>{prod.Optical_power} db</td>
-                                                <td><a href={prod.href}>{prod.lat} °, {prod.long} °</a></td>
-                                                <td>{prod.Tanggal_instalasi}</td>
+                                                <td>{prod.Optical_Power} db</td>
+                                                <td><a href={prod.GIS_href}>{prod.Latitude} °, {prod.Longitude} °</a></td>
+                                                <td>{prod.Tanggal_Instalasi}</td>
                                                 <td><NavLink className="btn btn-outline-info" to={`/DetailPage/${prod.ODP_ID}`}>Detail</NavLink></td>
                                             </tr>
                                         ))

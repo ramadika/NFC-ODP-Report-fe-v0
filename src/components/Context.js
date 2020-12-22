@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 export const DataContext = React.createContext();
-// export const Provider = DataContext.Provider;
+export const Provider = DataContext.Provider;
 
 export class DataProvider extends Component {
     
@@ -77,28 +77,6 @@ export class DataProvider extends Component {
                     "Tanggal_Berlangganan": "2020-12-11",
                     "Layanan": "Triple Play",
                 }]
-            },
-        ],
-        klasifikasiODP: [
-            {
-                "KlasifikasiODP_ID": 1,
-                "Klasifikasi_Nama": "Full Port",
-                "Jumlah_ODP": 0,
-            },
-            {
-                "KlasifikasiODP_ID": 2,
-                "Klasifikasi_Nama": "Medium Port",
-                "Jumlah_ODP": 0,
-            },
-            {
-                "KlasifikasiODP_ID": 3,
-                "Klasifikasi_Nama": "Low Port",
-                "Jumlah_ODP": 3,
-            },
-            {
-                "KlasifikasiODP_ID": 4,
-                "Klasifikasi_Nama": "Empty Port",
-                "Jumlah_ODP": 0,
             },
         ],
         standByPort: 18,

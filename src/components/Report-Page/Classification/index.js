@@ -12,20 +12,41 @@ export default class indexClass extends Component {
 
     state = {
         data: [],
+        odpclf: [],
+    }
+
+    fetchODP = () => {
+        fetch('http://localhost/backend/classification-odp.php')
+        .then(response => {
+            response.json().then(function(dataClf) {
+                if(dataClf.success === 1){
+                    this.setState({
+                        odpclf:dataClf.port,
+                    });
+                } 
+                else{
+                    this.context.post_show(false);
+                }               
+            }.bind(this));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
+    componentDidMount(){
+        this.fetchODP();
     }
 
     render() {
-        const {klasifikasiODP, products} = this.context;
-        var {data} = this.state;
+        var {data, odpclf} = this.state;
+        var cnt = this.props.ODPcnt;
 
-        var ODPcount = products.length;
-
-        klasifikasiODP.map((obj) => {
+        odpclf.map((obj) => {
           var randomColor = "#000000".replace(/0/g, function () {
             return (~~(Math.random() * 16)).toString(16);
           });
-          
-          var newNum = obj.Jumlah_ODP / ODPcount * 100;
+          var newNum = obj.Jumlah / cnt * 100;
       
           let insert = {
             color: randomColor,
@@ -64,10 +85,10 @@ export default class indexClass extends Component {
                         <table className="table table-borderless">
                             <tbody>
                                 {
-                                    klasifikasiODP.map(klasifikasi =>(
+                                    odpclf.map(klasifikasi =>(
                                         <tr key={klasifikasi.KlasifikasiODP_ID}>
                                             <th scope="row">{klasifikasi.Klasifikasi_Nama}</th>
-                                            <td>{klasifikasi.Jumlah_ODP} ODP</td>
+                                            <td>{klasifikasi.Jumlah} ODP</td>
                                         </tr>
                                     ))
                                 }

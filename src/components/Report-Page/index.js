@@ -10,11 +10,41 @@ import {DataContext} from 'components/Context'
 import 'components/Report-Page/index.css'
 
 export default class indexClass extends Component {
-    static contextType = DataContext;
+    static contextType = DataContext; 
+    constructor(props){
+        super(props);
+        this.state = {
+            odp:[],
+        }
+    
+    }
+
+    fetchODP = () => {
+        fetch('http://localhost/backend/all-odp.php')
+        .then(response => {
+            response.json().then(function(data) {
+                if(data.success === 1){
+                    this.setState({
+                        odp:data.odp.reverse(),
+                    });
+                } 
+                else{
+                    this.context.post_show(false);
+                }               
+            }.bind(this));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
+    componentDidMount(){
+        this.fetchODP();
+    }
 
     render() {
-        const {products, standByPort} = this.context;
-        var ODPcount = products.length;
+        const {standByPort} = this.context;
+        var {odp} = this.state;
 
         return (
             <div className="reportPage">
@@ -24,10 +54,14 @@ export default class indexClass extends Component {
                     </Row>
                     <Row className="mb-5 py-5 text-center odpAmnt">
                         <Col>
-                            ODP Total
+                            <h5>ODP Total</h5>
                         </Col>
                         <Col>
-                            {ODPcount}
+                            {
+                                odp.map(cnt =>(
+                                    <h5 key={cnt.ODP_ID}>{cnt.JumlahODP}</h5>
+                                ))
+                            }
                         </Col>
                     </Row>
                     <Row className="reportMap">
@@ -39,7 +73,11 @@ export default class indexClass extends Component {
                             <h3>Klasifikasi ODP</h3>
                         </Col>
                         <Col>
-                            <Data />
+                            {
+                                odp.map(cnt =>(
+                                    <Data key={cnt.ODP_ID} ODPcnt={cnt.JumlahODP}/> 
+                                ))
+                            }
                         </Col>
                     </Row>
                     <Row className="reportStandby">
