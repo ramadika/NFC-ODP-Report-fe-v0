@@ -16,7 +16,7 @@ export default class indexClass extends Component {
     }
 
     fetchODP = () => {
-        fetch('http://localhost/backend/classification-odp.php')
+        fetch('http://localhost/backend-app/classification-odp.php')
         .then(response => {
             response.json().then(function(dataClf) {
                 if(dataClf.success === 1){
