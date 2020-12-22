@@ -16,7 +16,7 @@ export default class reactMapbox extends Component {
         lng: 107.12830389999999,
         lat: -6.2773911,
         zoom: 13,
-        style: "mapbox://styles/mapbox/streets-v9",
+        style: "mapbox://styles/mapbox/streets-v11",
       };
     }
 
@@ -24,19 +24,19 @@ export default class reactMapbox extends Component {
         return (
             <div>
                 <Map
-                style= {this.state.style} 
-                containerStyle= {{
-                    height: '100vh',
-                    width: '83.5vw'
-                }} 
-                center= {[this.state.lng, this.state.lat]}
-                zoom= {[this.state.zoom]} 
+                    style= {this.state.style} 
+                    containerStyle= {{
+                        height: '100vh',
+                        width: '83.5vw'
+                    }} 
+                    center= {[this.state.lng, this.state.lat]}
+                    zoom= {[this.state.zoom]} 
 
-                className="mapContainer"
+                    className="mapContainer"
                 >
-                <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                    <Feature coordinates={[-6.2773911, 107.12830389999999]} />
-                </Layer>
+                    <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
+                        <Feature coordinates={[-6.2773911, 107.12830389999999]} />
+                    </Layer>
                 </Map>
             </div>
         )
