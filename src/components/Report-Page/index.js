@@ -14,18 +14,18 @@ export default class indexClass extends Component {
     constructor(props){
         super(props);
         this.state = {
-            odp:[],
+            odpCount:[],
         }
     
     }
 
     fetchODP = () => {
-        fetch('http://localhost/backend/all-odp.php')
+        fetch('http://localhost/backend/count-odp.php')
         .then(response => {
             response.json().then(function(data) {
                 if(data.success === 1){
                     this.setState({
-                        odp:data.odp.reverse(),
+                        odpCount:data.countodp.reverse(),
                     });
                 } 
                 else{
@@ -44,7 +44,7 @@ export default class indexClass extends Component {
 
     render() {
         const {standByPort} = this.context;
-        var {odp} = this.state;
+        var {odpCount} = this.state;
 
         return (
             <div className="reportPage">
@@ -58,7 +58,7 @@ export default class indexClass extends Component {
                         </Col>
                         <Col>
                             {
-                                odp.map(cnt =>(
+                                odpCount.map(cnt =>(
                                     <h5 key={cnt.ODP_ID}>{cnt.JumlahODP}</h5>
                                 ))
                             }
@@ -74,7 +74,7 @@ export default class indexClass extends Component {
                         </Col>
                         <Col>
                             {
-                                odp.map(cnt =>(
+                                odpCount.map(cnt =>( 
                                     <Data key={cnt.ODP_ID} ODPcnt={cnt.JumlahODP}/> 
                                 ))
                             }
