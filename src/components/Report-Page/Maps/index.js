@@ -19,7 +19,7 @@ export default function Reactgooglemaps() {
         <div style={{width: '100vw', height: '75vh'}}>
             <WrappedMap 
             // AIzaSyAd2myu5NPRMQYGwtXfflLzj_U-A8sn3TI
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAd2myu5NPRMQYGwtXfflLzj_U-A8sn3TI&callback=initMap`} 
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyCSgkONZR4dgCxmqpZgwqHuvDcE0Q5EKVA&callback=initMap`} 
                 loadingElement={<div style={{ height: "75%" }} />}
                 containerElement={<div style={{ height: "75%" }} />}
                 mapElement={<div style={{ height: "75%" }} />}
