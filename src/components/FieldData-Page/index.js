@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 import {DataContext} from 'components/Context'
 import 'components/FieldData-Page/index.css'
 
-export default class indexClass extends Component {
+export default class Index extends Component {
     static contextType = DataContext;
     state = {
         number: 0,

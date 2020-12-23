@@ -10,7 +10,7 @@ import ImgBG from 'assets/thomas-jensen-h3vT1Kp0FxA-unsplash.jpg'
 import 'components/Login-Page/index.css'
 // import {AppContext} from 'components/Context';
 
-export default class AddUser extends Component{
+export default class Index extends Component{
     // static contextType = AppContext;   
     
     insertUser = (event) => {

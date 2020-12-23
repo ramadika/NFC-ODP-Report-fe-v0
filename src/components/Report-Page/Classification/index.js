@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col'
 import {DataContext} from 'components/Context'
 import 'components/Report-Page/Classification/index.css'
 
-export default class indexClass extends Component {
+export default class Index extends Component {
     static contextType = DataContext;
 
     state = {

@@ -27,7 +27,7 @@ class Markers extends PureComponent {
     }
   }
 
-export default class Map extends Component {
+export default class Index extends Component {
     state = {
       viewport: {
         latitude: -7.090911,

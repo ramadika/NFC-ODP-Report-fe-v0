@@ -9,7 +9,7 @@ import Data from 'components/Report-Page/Classification'
 import {DataContext} from 'components/Context'
 import 'components/Report-Page/index.css'
 
-export default class indexClass extends Component {
+export default class Index extends Component {
     static contextType = DataContext; 
     constructor(props){
         super(props);
