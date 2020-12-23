@@ -1,5 +1,7 @@
+// Dependencies
 import React, { Component, PureComponent } from 'react'
 import ReactMapGL, { Marker } from "react-map-gl";
+// Internals
 import YIcon from 'assets/37995c2da2c65b263be837809ce1944c-removebg-preview.png'
 import BIcon from 'assets/download-removebg-preview.png'
 import RIcon from 'assets/262-2628212_gps-point-red-marker-svg-removebg-preview.png'
@@ -51,7 +53,6 @@ export default class Index extends Component {
                     this.setState({
                         odpLatlang:data.odp.reverse(),
                     });
-                    // console.log(this.state.odpLatlang);
                 } 
                 else{
                     this.context.post_show(false);
@@ -82,18 +83,6 @@ export default class Index extends Component {
                     mapStyle= {style}
                     onViewportChange={(viewport) => this.setState({viewport})}
                 >
-                    {/* {
-                        data.map(cnt =>(
-                            <div key={cnt.id}>{cnt.value}</div>
-                        )) 
-                    } */}
-                    {/* {
-                        odpLatlang.map(latlang => (
-                            <Marker key={latlang.ODP_ID} latitude={Number(latlang.Latitude)} longitude={Number(latlang.Longitude)}>
-                                <img src={RIcon} alt="Skate Park Icon" width="15px"/>
-                            </Marker>
-                        ))
-                    } */}
                     <Markers data={odpLatlang} />
                 </ReactMapGL>
             </div>
