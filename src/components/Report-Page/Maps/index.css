@@ -1,6 +1,10 @@
+.mapContainer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (min-width: 300px) and (max-width: 812px) {
   .mapContainer {
-    margin-left: 11%;
     margin-bottom: 65%;
   }
 }
