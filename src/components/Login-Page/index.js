@@ -16,7 +16,7 @@ export default class Index extends Component{
     insertUser = (event) => {
         event.preventDefault();
         event.persist();
-        Axios.post('http://localhost/php-react/add-user.php',{
+        Axios.post('http://localhost/backend-app/login.php',{
             user_name:this.username.value,
             pass_word:this.password.value
         })
@@ -25,7 +25,7 @@ export default class Index extends Component{
                 
                 this.context.addNewUser(data.id,this.username.value,this.useremail.value);
                 event.target.reset();
-                // alert(data.msg);
+                alert(data.msg);
             }
             else{
                 alert(data.msg);
