@@ -1,50 +1,76 @@
 // Dependencies
 import React, { Component, PureComponent } from 'react'
-import ReactMapGL, { Marker } from "react-map-gl";
+import L from 'leaflet'
+import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet' 
 // Internals
-import YIcon from 'assets/37995c2da2c65b263be837809ce1944c-removebg-preview.png'
-import BIcon from 'assets/download-removebg-preview.png'
-import RIcon from 'assets/262-2628212_gps-point-red-marker-svg-removebg-preview.png'
+import BIcon from 'assets/blueIcon.png'
+import YIcon from 'assets/yellowIcon.png'
+import RIcon from 'assets/redIcon.png'
 import 'components/Report-Page/Maps/index.css'
+
+var blueIcon = L.icon({
+    iconUrl: BIcon,
+    iconSize: [28, 35],
+    iconAnchor: [22, 34],
+    popupAnchor: [-7, -34]
+})
+
+var yellowIcon = L.icon({
+    iconUrl: YIcon,
+    iconSize: [28, 35],
+    iconAnchor: [22, 34],
+    popupAnchor: [-7, -34]
+})
+
+var redIcon = L.icon({
+    iconUrl: RIcon,
+    iconSize: [28, 35],
+    iconAnchor: [22, 34],
+    popupAnchor: [-7, -34]
+})
 
 class Markers extends PureComponent {
     render() {
         const {data} = this.props;
 
+        // eslint-disable-next-line array-callback-return
         return data.map(obj => { 
+            const position = [Number(obj.Latitude), Number(obj.Longitude)]
             if (obj.Kapasitas_After < 8 && obj.Kapasitas_After >= 4) {
-                return  <Marker key={obj.ODP_ID} latitude={Number(obj.Latitude)} longitude={Number(obj.Longitude)}>
-                            <img src={YIcon} alt="Medium Icon" width="15px"/>
+                return  <Marker key={obj.ODP_ID} position={position} icon={yellowIcon}>
+                            <Popup>
+                                ODP ID: {obj.ODP_ID} <br /> Kapasitas: {obj.Kapasitas_After}
+                            </Popup>
                         </Marker>;
             }else if (obj.Kapasitas_After >= 8) { 
-                return  <Marker key={obj.ODP_ID} latitude={Number(obj.Latitude)} longitude={Number(obj.Longitude)}>
-                            <img src={BIcon} alt="Full Icon" width="15px"/>
+                return  <Marker key={obj.ODP_ID} position={position} icon={blueIcon}>
+                            <Popup>
+                                ODP ID: {obj.ODP_ID} <br /> Kapasitas: {obj.Kapasitas_After}
+                            </Popup>
                         </Marker>;
             }else if (obj.Kapasitas_After < 4){
-                return  <Marker key={obj.ODP_ID} latitude={Number(obj.Latitude)} longitude={Number(obj.Longitude)}>
-                            <img src={RIcon} alt="Low Icon" width="15px"/>
-                        </Marker>;
+                return  <Marker key={obj.ODP_ID} position={position} icon={redIcon}>
+                            <Popup>
+                                ODP ID: {obj.ODP_ID} <br /> Kapasitas: {obj.Kapasitas_After}
+                            </Popup>
+                        </Marker>; 
             }
         });
     }
-  }
+}
 
-export default class Index extends Component {
+export default class index extends Component { 
+
     state = {
-      viewport: {
-        latitude: -7.090911,
-        longitude: 107.668884,
-        zoom: 5, 
-        width: "70vw",
-        height: "100vh",
-      },
-      style: "mapbox://styles/mapbox/dark-v10",
-      token: "pk.eyJ1IjoicmFtYWRpa2ExMDUwIiwiYSI6ImNraXpkZzU4cTE2M3QycW15cnhrMG1ueXcifQ.s_vgxudeVqiQexpSPYsVHw",
-      odpLatlang: [],
-      data: [],
-    //   selectedPark: null,
-    };
-
+        viewport: {
+          latitude: -7.090911,
+          longitude: 107.668884,
+        },
+        zoom: 6,
+        odpLatlang: [],
+        data: [],
+    }
+    
     fetchODP = () => {
         fetch('http://localhost/backend-app/all-odp.php')
         .then(response => {
@@ -68,24 +94,18 @@ export default class Index extends Component {
         this.fetchODP();
     }
 
-    render() {
-        var { odpLatlang, token, style, viewport } = this.state;
 
+    render() {
+        var { odpLatlang, viewport } = this.state;
+        const position = [viewport.latitude, viewport.longitude]
         return (
-            <div className="mapContainer">
-                <ReactMapGL
-                    latitude= {viewport.latitude} 
-                    longitude= {viewport.longitude}
-                    width= {viewport.width} 
-                    height= {viewport.height}
-                    zoom= {viewport.zoom}
-                    mapboxApiAccessToken= {token}
-                    mapStyle= {style}
-                    onViewportChange={(viewport) => this.setState({viewport})}
-                >
-                    <Markers data={odpLatlang} />
-                </ReactMapGL>
-            </div>
+            <MapContainer className="map" center={position} zoom={this.state.zoom} scrollWheelZoom={true}>
+              <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Markers data={odpLatlang} />
+            </MapContainer>
         )
     }
 }

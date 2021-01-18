@@ -18,7 +18,7 @@ export default class Index extends Component{
         event.persist();
         Axios.post('http://localhost/backend-app/login.php',{
             user_name:this.username.value,
-            pass_word:this.password.value
+            pass_word:this.password.value 
         })
         .then(function ({data}) {
             if(data.success === 1){

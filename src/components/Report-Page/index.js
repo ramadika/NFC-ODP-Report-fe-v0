@@ -43,7 +43,6 @@ export default class Index extends Component {
     }
 
     render() {
-        const {standByPort} = this.context;
         var {odpCount} = this.state;
 
         return (
@@ -86,7 +85,11 @@ export default class Index extends Component {
                             <tbody>
                                 <tr>
                                     <th scope="row">Standby</th>
-                                    <td>{standByPort} port</td>
+                                    {
+                                        odpCount.map(cnt =>(
+                                            <td key={cnt.ODP_ID}>{cnt.StandbyPort} port</td>
+                                        ))
+                                    }
                                 </tr>
                                 <tr>
                                     <th scope="row">Cost</th>

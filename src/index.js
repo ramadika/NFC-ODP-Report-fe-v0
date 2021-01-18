@@ -8,6 +8,7 @@ import {DataProvider} from 'components/Context'
 // Internals
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css' 
+import 'leaflet/dist/leaflet.css' 
 
 // import App from './App';
 import BaseLayout from 'components/Baselayout'
@@ -21,7 +22,7 @@ import DetailPage from 'components/FieldData-Page/DetailField-Page'
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
-  // </React.StrictMode>,
+  // </React.StrictMode>, 
   <Router>
     <Switch>
       <Route exact path="/" component={Login}/>

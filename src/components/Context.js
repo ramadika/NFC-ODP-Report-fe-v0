@@ -80,6 +80,13 @@ export class DataProvider extends Component {
             },
         ],
         standByPort: 18,
+        post_found:true,
+    }
+
+    postShow = (show) => {
+        this.setState({
+            post_found:show
+        })
     }
 
     render() {
