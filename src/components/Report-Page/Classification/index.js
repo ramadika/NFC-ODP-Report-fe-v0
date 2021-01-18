@@ -42,6 +42,7 @@ export default class Index extends Component {
         var {data, odpclf} = this.state;
         var cnt = this.props.ODPcnt;
 
+        // eslint-disable-next-line array-callback-return
         odpclf.map((obj) => {
           var randomColor = "#000000".replace(/0/g, function () {
             return (~~(Math.random() * 16)).toString(16);
