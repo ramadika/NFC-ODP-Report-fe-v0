@@ -26,15 +26,17 @@ export default class Index extends Component {
                         const data = this.state.filterODP.filter(item =>{
                             return item.ODP_ID === this.props.match.params.id
                         })
-                        this.setState({
-                            filterODP: data
-                        })
 
                         const dataSel = this.context.Allodp.filter(item =>{
                             return item.ODP_ID === this.props.match.params.id
                         })
+
+                        if(data.length === 0){
+                            alert("Empty")
+                        }
                         this.setState({
-                            ODPSelected: dataSel
+                            ODPSelected: dataSel,
+                            filterODP: data
                         })
                     }else{
                         alert("Empty")

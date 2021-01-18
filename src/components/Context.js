@@ -5,7 +5,6 @@ export const Provider = DataContext.Provider;
 export class DataProvider extends Component {
     
     state = {
-        standByPort: 18,
         post_found:true,
         Allodp:[],
     }
@@ -40,10 +39,10 @@ export class DataProvider extends Component {
     }
 
     render() {
-        const {products, klasifikasiODP, standByPort, Allodp} = this.state;
+        const {Allodp} = this.state;
         return (
             <DataContext.Provider 
-            value={{products, klasifikasiODP, standByPort, Allodp}}>
+            value={{Allodp}}>
                 {this.props.children}
             </DataContext.Provider>
         )
