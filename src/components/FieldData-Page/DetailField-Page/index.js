@@ -9,18 +9,45 @@ import 'components/FieldData-Page/DetailField-Page/index.css'
 export default class Index extends Component {
     static contextType = DataContext;
     state = {
-        product: [],
         number: 0,
+        filterODP: [],
+        ODPSelected: [],
     }
 
     getProduct = () =>{
-        if(this.props.match.params.id){
-            const res = this.context.products;
-            const data = res.filter(item =>{
-                return item.ODP_ID === this.props.match.params.id
-            })
-            this.setState({product: data})
-        }
+        fetch('http://localhost/backend-app/all-port.php')
+        .then(response => {
+            response.json().then(function(data) {
+                if(data.success === 1){
+                    this.setState({
+                        filterODP:data.odp.reverse(),
+                    });
+                    if(this.props.match.params.id){
+                        const data = this.state.filterODP.filter(item =>{
+                            return item.ODP_ID === this.props.match.params.id
+                        })
+                        this.setState({
+                            filterODP: data
+                        })
+
+                        const dataSel = this.context.Allodp.filter(item =>{
+                            return item.ODP_ID === this.props.match.params.id
+                        })
+                        this.setState({
+                            ODPSelected: dataSel
+                        })
+                    }else{
+                        alert("Empty")
+                    }   
+                } 
+                else{
+                    alert("Empty")
+                }               
+            }.bind(this));
+        })
+        .catch(error => {
+            console.log(error);
+        });
     };
 
     componentDidMount(){
@@ -28,7 +55,7 @@ export default class Index extends Component {
     }
 
     render() {
-        const {product} = this.state;
+        const {filterODP, ODPSelected} = this.state;
         var {number} = this.state;
 
         return (
@@ -36,7 +63,7 @@ export default class Index extends Component {
                 <Container className="mt-5">
                     <Row className="detailTitle mb-3">
                         {
-                            product.map(item =>(
+                            ODPSelected.map(item =>(
                                 <h1 key={item.id}>Detail ODP - {item.ODP_ID}</h1>
                             ))
                         }
@@ -47,19 +74,19 @@ export default class Index extends Component {
                                 <thead>
                                     <tr>
                                         <th scope="col">Kapasitas</th>
-                                        <th scope="col">Optical Power</th>
                                         <th scope="col">GIS</th>
                                         <th scope="col">Tanggal Instalasi</th>
+                                        <th scope="col">Klasifikasi ODP</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
-                                        product.map(item =>(
+                                        ODPSelected.map(item =>(
                                             <tr key={item.id}>
                                                 <td>{item.Kapasitas} port</td>
-                                                <td>{item.Optical_power} db</td>
-                                                <td><a href={item.href}>{item.lat} °, {item.long} °</a></td>
-                                                <td>{item.Tanggal_instalasi}</td>
+                                                <td><a target="_blank" rel="noopener noreferrer" href={item.GIS_href}>{item.Latitude} °, {item.Longitude} °</a></td>
+                                                <td>{item.Tanggal_Instalasi}</td>
+                                                <td>{item.Klasifikasi_Nama}</td>
                                             </tr>
                                         ))
                                     }
@@ -80,23 +107,19 @@ export default class Index extends Component {
                                         <th scope="col">Layanan</th>
                                     </tr>
                                 </thead>
-                                {
-                                    product.map(item =>(
-                                        <tbody key={item.id}>
-                                            {
-                                                item.Port.map(sub=>(
-                                                    <tr key={sub.Port_ID}>
-                                                        <th scope="row">{number += 1}</th>
-                                                        <td>{sub.ID_Pelanggan}</td>
-                                                        <td>{sub.Alamat}</td>
-                                                        <td>{sub.Tanggal_Berlangganan}</td>
-                                                        <td>{sub.Layanan}</td>
-                                                    </tr>
-                                                ))
-                                            }
-                                        </tbody>
-                                    ))
-                                }
+                                <tbody>
+                                    {
+                                        filterODP.map(sub=>(
+                                            <tr key={sub.Port_ID}>
+                                                <th scope="row">{number += 1}</th>
+                                                <td>{sub.ID_Pelanggan}</td>
+                                                <td>{sub.Alamat}</td>
+                                                <td>{sub.Tanggal_Instalasi}</td>
+                                                <td>{sub.Layanan}</td>
+                                            </tr>
+                                        ))
+                                    }
+                                </tbody>
                             </table>
                         </div>
                     </Row>
