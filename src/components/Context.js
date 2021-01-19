@@ -7,6 +7,16 @@ export class DataProvider extends Component {
     state = {
         post_found: true,
         Allodp: [],
+        initialURL: 'http://localhost/backend-app/all-odp.php',
+        headers: [
+            // { name: "No#", field: "id", sortable: false },
+            { name: "ODP ID", field: "odp id", sortable: true },
+            { name: "Kapasitas", field: "kapasitas", sortable: true },
+            { name: "Optical Power", field: "location", sortable: false },
+            { name: "Location", field: "location", sortable: false },
+            { name: "Tanggal Instalasi", field: "tanggal", sortable: false },
+            { name: "Action", field: "action", sortable: false },
+        ],
     }
 
     postShow = (show) => {
@@ -16,7 +26,7 @@ export class DataProvider extends Component {
     }
     
     fetchAllODP = () => {
-        fetch('http://localhost/backend-app/all-odp.php')
+        fetch(this.state.initialURL)
         .then(response => {
             response.json().then(function(data) {
                 if(data.success === 1){
@@ -42,6 +52,8 @@ export class DataProvider extends Component {
         const contextValue = {
             Allodp: this.state.Allodp,
             post_found: this.state.post_found,
+            initialURL: this.state.initialURL,
+            headers: this.state.headers,
             post_show: this.postShow
         }
 

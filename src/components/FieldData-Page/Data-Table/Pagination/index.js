@@ -1,13 +1,11 @@
-import React, { useEffect, useState, useMemo } from "react";
-import Pagination from "react-bootstrap/Pagination";
+// Dependencies
+import React, {useEffect, useState, useMemo} from 'react'
+import Pagination from 'react-bootstrap/Pagination'
+// Internals
+import 'components/FieldData-Page/index.css'
 
-const PaginationComponent = ({
-    total = 0,
-    itemsPerPage = 10,
-    currentPage = 1,
-    onPageChange
-}) => {
-    const [totalPages, setTotalPages] = useState(0);
+export default function Index({ total=0, itemsPerPage=10, currentPage=1, onPageChange }) {
+    const [totalPages, setTotalPages] = useState(0)
 
     useEffect(() => {
         if (total > 0 && itemsPerPage > 0)
@@ -21,17 +19,17 @@ const PaginationComponent = ({
             pages.push(
                 <Pagination.Item
                     key={i}
-                    active={i === currentPage}
+                    active={i  === currentPage}
                     onClick={() => onPageChange(i)}
                 >
                     {i}
                 </Pagination.Item>
-            );
+            )
         }
 
         return pages;
-    }, [totalPages, currentPage]);
-
+    }, [totalPages, currentPage, onPageChange]);
+    
     if (totalPages === 0) return null;
 
     return (
@@ -46,7 +44,5 @@ const PaginationComponent = ({
                 disabled={currentPage === totalPages}
             />
         </Pagination>
-    );
-};
-
-export default PaginationComponent;
+    )
+}

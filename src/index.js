@@ -18,6 +18,7 @@ import AdminPage from 'components/Admin-Page'
 import ReportPage from 'components/Report-Page'
 import FieldDataPage from 'components/FieldData-Page'
 import DetailPage from 'components/FieldData-Page/DetailField-Page'
+// import TableData from 'components/FieldData-Page/Data-Table/tableData'
 
 ReactDOM.render(
   // <React.StrictMode>

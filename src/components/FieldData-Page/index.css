@@ -14,6 +14,29 @@
   margin-bottom: 50px;
   text-align: center;
   border: 1px solid #343a40;
+  width: 100%;
+}
+
+.table th {
+  font-size: 11pt;
+  text-transform: uppercase;
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.table tbody th {
+  font-size: 11pt;
+  text-transform: none;
+  background-color: white;
+  color: #000000;
+}
+
+.table td {
+  font-size: 11pt;
+}
+
+.inputSearch {
+  width: 200px;
 }
 
 @media (min-width: 300px) and (max-width: 812px) {
@@ -22,5 +45,8 @@
   }
   .fData .table {
     font-size: 8pt;
+  }
+  .inputSearch {
+    width: 150px;
   }
 }
