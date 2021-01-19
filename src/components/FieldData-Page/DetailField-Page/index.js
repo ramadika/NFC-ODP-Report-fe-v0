@@ -66,7 +66,7 @@ export default class Index extends Component {
                     <Row className="detailTitle mb-3">
                         {
                             ODPSelected.map(item =>(
-                                <h1 key={item.id}>Detail ODP - {item.ODP_ID}</h1>
+                                <h1 key={item.id}>ODP - {item.ODP_ID}</h1>
                             ))
                         }
                     </Row>

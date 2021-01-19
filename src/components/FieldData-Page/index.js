@@ -20,7 +20,7 @@ export default function TableData() {
     const All = context.Allodp;
     const headers = context.headers;
     
-    const ITEMS_PER_PAGE = 10;
+    const ITEMS_PER_PAGE = 3;
     // var number = 0;
 
     
