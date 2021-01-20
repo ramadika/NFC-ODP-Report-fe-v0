@@ -66,7 +66,7 @@ export default class Index extends Component {
                     <Row className="detailTitle mb-3">
                         {
                             ODPSelected.map(item =>(
-                                <h1 key={item.id}>ODP - {item.ODP_ID}</h1>
+                                <h1 key={item.ODP_ID}>ODP - {item.ODP_ID}</h1>
                             ))
                         }
                     </Row>
@@ -84,7 +84,7 @@ export default class Index extends Component {
                                 <tbody>
                                     {
                                         ODPSelected.map(item =>(
-                                            <tr key={item.id}>
+                                            <tr key={item.ODP_ID}>
                                                 <td>{item.Kapasitas} port</td>
                                                 <td><a target="_blank" rel="noopener noreferrer" href={item.GIS_href}>{item.Latitude} °, {item.Longitude} °</a></td>
                                                 <td>{item.Tanggal_Instalasi}</td>
