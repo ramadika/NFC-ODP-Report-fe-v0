@@ -28,9 +28,7 @@ export default class Index extends Component{
         if(this.state.Username && this.state.Password){ 
             PostData(this.state).then((result) => {
                 let responseJson = result;
-                console.log(result);
-                if(responseJson.user){
-                    alert(responseJson.msg);  
+                if(responseJson.user){ 
                     // sessionStorage.setItem('user',JSON.stringify(responseJson));
                     this.setState({
                         redirectToReferrer: true,
@@ -75,13 +73,16 @@ export default class Index extends Component{
                         </Col>
                         <Col className="lgnCol text-left">
                             <h2 className="mb-3">Login</h2>
-                            <div className="inputLogin-custom">
-                                <h6 className="usPsLog">Username</h6>
-                                <input type="text" name="Username" onChange={this.onChange} className="form-control" placeholder="Username" />
-                                <h6 className="usPsLog">Password</h6>
-                                <input type="password" name="Password" onChange={this.onChange} className="form-control" placeholder="Password"/>
-                                <input className=" btnLogin-custom mb-5" type="submit" value="Sign in" onClick={this.login}></input>
-                            </div>
+                            {/* <form> */}
+                                <div className="inputLogin-custom">
+                                    <h6 className="usPsLog">Username</h6>
+                                    <input type="text" name="Username" onChange={this.onChange} className="form-control" placeholder="Username" />
+                                    <h6 className="usPsLog">Password</h6>
+                                    <input type="password" name="Password" onChange={this.onChange} className="form-control" placeholder="Password"/>
+                                    <input className=" btnLogin-custom mb-5" type="submit" value="Sign in" onClick={this.login}></input>
+                                    {/* <button type="submit" class="btnLogin-custom mb-5" onClick={this.login}>Sign in</button> */}
+                                </div>
+                            {/* </form> */}
                         </Col>
                     </Row>
                 </Container>
