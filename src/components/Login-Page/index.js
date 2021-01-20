@@ -31,7 +31,7 @@ export default class Index extends Component{
                 console.log(result);
                 if(responseJson.user){
                     alert(responseJson.msg);  
-                    sessionStorage.setItem('user',JSON.stringify(responseJson));
+                    // sessionStorage.setItem('user',JSON.stringify(responseJson));
                     this.setState({
                         redirectToReferrer: true,
                         count: 1
@@ -39,6 +39,10 @@ export default class Index extends Component{
                 }else {
                     alert(responseJson.msg);
                 }
+            });
+        }else {
+            PostData(this.state).then((result) => {
+                alert(result.msg);
             });
         }
     }
@@ -52,11 +56,11 @@ export default class Index extends Component{
     render(){
 
         if (this.state.redirectToReferrer ){
-            if (sessionStorage.getItem('user')){
+            // if (sessionStorage.getItem('user')){
                 return (
                     <Redirect to={'/HomePage'}/>
                 )
-            }
+            // }
         } 
 
         return(
@@ -73,7 +77,7 @@ export default class Index extends Component{
                             <h2 className="mb-3">Login</h2>
                             <div className="inputLogin-custom">
                                 <h6 className="usPsLog">Username</h6>
-                                <input type="text" name="Username" onChange={this.onChange} className="form-control" placeholder="Username"/>
+                                <input type="text" name="Username" onChange={this.onChange} className="form-control" placeholder="Username" />
                                 <h6 className="usPsLog">Password</h6>
                                 <input type="password" name="Password" onChange={this.onChange} className="form-control" placeholder="Password"/>
                                 <input className=" btnLogin-custom mb-5" type="submit" value="Sign in" onClick={this.login}></input>
