@@ -75,10 +75,10 @@ export default class Index extends Component {
                             <table className="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Kapasitas</th>
-                                        <th scope="col">GIS</th>
-                                        <th scope="col">Tanggal Instalasi</th>
-                                        <th scope="col">Klasifikasi ODP</th>
+                                        <th scope="col">Capacity</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Installation Date</th>
+                                        <th scope="col">ODP Classification</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -103,10 +103,10 @@ export default class Index extends Component {
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
-                                        <th scope="col">ID Pelanggan</th>
-                                        <th scope="col">Alamat</th>
-                                        <th scope="col">Tanggal Instalasi</th>
-                                        <th scope="col">Layanan</th>
+                                        <th scope="col">Customer ID</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Installation Date</th>
+                                        <th scope="col">Service</th>
                                     </tr>
                                 </thead>
                                 <tbody>

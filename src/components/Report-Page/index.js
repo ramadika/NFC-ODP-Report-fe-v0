@@ -64,12 +64,12 @@ export default class Index extends Component {
                         </Col>
                     </Row>
                     <Row className="reportMap">
-                        <h3>Sebaran ODP</h3>
+                        <h3>ODP Mapping</h3>
                         <Map /> 
                     </Row>
                     <Row className="mb-5 reportData">
                         <Col className="text-center d-flex align-items-center">
-                            <h3>Klasifikasi ODP</h3>
+                            <h3>ODP Classification</h3>
                         </Col>
                         <Col>
                             {
@@ -91,10 +91,10 @@ export default class Index extends Component {
                                         ))
                                     }
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th scope="row">Cost</th>
                                     <td>PSB / day</td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </Row>

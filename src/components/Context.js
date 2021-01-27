@@ -11,10 +11,10 @@ export class DataProvider extends Component {
         headers: [
             // { name: "No#", field: "id", sortable: false },
             { name: "ODP ID", field: "odp id", sortable: true },
-            { name: "Kapasitas", field: "kapasitas", sortable: true },
+            { name: "Capacity", field: "kapasitas", sortable: true },
             { name: "Optical Power", field: "location", sortable: false },
             { name: "Location", field: "location", sortable: false },
-            { name: "Tanggal Instalasi", field: "tanggal", sortable: false },
+            { name: "Installation Date", field: "tanggal", sortable: false },
             { name: "Action", field: "action", sortable: false },
         ],
     }
