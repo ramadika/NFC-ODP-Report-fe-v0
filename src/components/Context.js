@@ -17,7 +17,7 @@ export class DataProvider extends Component {
             { name: "Installation Date", field: "tanggal", sortable: false },
             { name: "Action", field: "action", sortable: false },
         ],
-    }
+    } 
 
     postShow = (show) => {
         this.setState({
