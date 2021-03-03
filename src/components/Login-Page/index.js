@@ -34,9 +34,6 @@ export default class Index extends Component{
                         redirectToReferrer: true,
                         count: 1
                     });
-                    if(responseJson.verifikasi !== "1"){
-                        alert(responseJson.msg);
-                    }
                 }else {
                     alert(responseJson.msg);
                 }
