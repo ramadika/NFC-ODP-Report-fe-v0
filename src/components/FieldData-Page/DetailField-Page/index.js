@@ -15,7 +15,7 @@ export default class Index extends Component {
     }
 
     getProduct = () =>{
-        fetch('http://localhost/backend-app/all-port.php')
+        fetch('http://103.135.5.242/backend-app/all-port.php')
         .then(response => {
             response.json().then(function(data) {
                 if(data.success === 1){
