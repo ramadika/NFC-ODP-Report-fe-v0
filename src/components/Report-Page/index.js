@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 // Internals
 import Map from 'components/Report-Page/Maps'
 import Data from 'components/Report-Page/Classification'
+import Summary from 'components/Report-Page/Summary'
 import {DataContext} from 'components/Context'
 import 'components/Report-Page/index.css'
 
@@ -95,6 +96,28 @@ export default class Index extends Component {
                                     <th scope="row">Cost</th>
                                     <td>PSB / day</td>
                                 </tr> */}
+                            </tbody>
+                        </table>
+                    </Row>
+                    <Row className="reportSummary">
+                        <h3>ODP Summary</h3>
+                    </Row>
+                    <Row className="reportSummary">
+                        <Col className="mr-3">
+                            <h2><b>Installation / Day</b></h2>
+                            <h5>12</h5>
+                        </Col>
+                        <Col className="mr-3">
+                            <h2><b>Dismantle / Day</b></h2>
+                            <h5>12</h5>
+                        </Col>
+                        <Col>
+                            <h2><b>Addition / Day</b></h2>
+                            <h5>12</h5>
+                        </Col>
+                        <table className="table table-borderless mt-2">
+                            <tbody>
+                                <Summary /> 
                             </tbody>
                         </table>
                     </Row>
