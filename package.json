@@ -12,7 +12,6 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "leaflet": "^1.7.1",
-    "leaflet-geosearch": "^3.2.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-datatable-pagination": "^1.0.3",
