@@ -7,7 +7,7 @@ export class DataProvider extends Component {
     state = {
         post_found: true,
         Allodp: [],
-        GetODPAllURL: 'http://localhost/backend-app/all-odp.php',
+        GetODPAllURL: 'https://103.135.5.242/backend-app/all-odp.php',
         headers: [
             // { name: "No#", field: "id", sortable: false },
             { name: "ODP ID", field: "odp id", sortable: true },

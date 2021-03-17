@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col'
 // Internals
 import Map from 'components/Report-Page/Maps'
 import Data from 'components/Report-Page/Classification'
-import Summary from 'components/Report-Page/Summary'
+// import Summary from 'components/Report-Page/Summary'
 import {DataContext} from 'components/Context'
 import 'components/Report-Page/index.css'
 
@@ -21,7 +21,7 @@ export default class Index extends Component {
     }
 
     fetchODP = () => {
-        fetch('http://localhost/backend-app/count-odp.php')
+        fetch('https://103.135.5.242/backend-app/count-odp.php')
         .then(response => {
             response.json().then(function(data) {
                 if(data.success === 1){
@@ -99,7 +99,7 @@ export default class Index extends Component {
                             </tbody>
                         </table>
                     </Row>
-                    <Row className="reportSummary">
+                    {/* <Row className="reportSummary">
                         <h3>ODP Summary</h3>
                     </Row>
                     <Row className="reportSummary">
@@ -120,7 +120,7 @@ export default class Index extends Component {
                                 <Summary /> 
                             </tbody>
                         </table>
-                    </Row>
+                    </Row> */}
                 </Container>
             </div>
         )

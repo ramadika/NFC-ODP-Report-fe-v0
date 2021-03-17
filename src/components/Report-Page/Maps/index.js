@@ -72,7 +72,7 @@ export default class index extends Component {
     }
     
     fetchODP = () => {
-        fetch('http://localhost/backend-app/all-odp.php')
+        fetch('https://103.135.5.242/backend-app/all-odp.php')
         .then(response => {
             response.json().then(function(data) {
                 if(data.success === 1){
