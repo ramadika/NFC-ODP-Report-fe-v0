@@ -15,7 +15,10 @@ export default class Index extends Component {
     constructor(props){
         super(props);
         this.state = {
-            odpCount:[],
+            odpCount: [],
+            installationDay: [],
+            additionDay: [],
+            dismantlingDay: [],
         }
     
     }
@@ -39,12 +42,72 @@ export default class Index extends Component {
         });
     }
 
+    fetchinstallDay = () => {
+        fetch('https://103.135.5.242/backend-app/installation-day.php')
+        .then(response => {
+            response.json().then(function(dayInstall) {
+                if(dayInstall.success === 1){
+                    this.setState({
+                        installationDay:dayInstall.installDay,
+                    });
+                } 
+                else{
+                    this.context.post_show(false);
+                }               
+            }.bind(this));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+  
+    fetchadditionDay = () => {
+        fetch('https://103.135.5.242/backend-app/addition-day.php')
+        .then(response => {
+            response.json().then(function(dayAddition) {
+                if(dayAddition.success === 1){
+                    this.setState({
+                        additionDay:dayAddition.addDay,
+                    });
+                } 
+                else{
+                    this.context.post_show(false);
+                }               
+            }.bind(this));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+  
+    fetchdismantleDay = () => {
+        fetch('https://103.135.5.242/backend-app/dismantle-day.php')
+        .then(response => {
+            response.json().then(function(dayDismantle) {
+                if(dayDismantle.success === 1){
+                    this.setState({
+                        dismantlingDay:dayDismantle.dismantleDay,
+                    });
+                } 
+                else{
+                    this.context.post_show(false);
+                }               
+            }.bind(this));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
     componentDidMount(){
         this.fetchODP();
+        this.fetchinstallDay();
+        this.fetchadditionDay();
+        this.fetchdismantleDay();
     }
 
     render() {
-        var {odpCount} = this.state;
+        var {odpCount, installationDay, additionDay, dismantlingDay} = this.state;
 
         return (
             <div className="reportPage">
@@ -99,28 +162,36 @@ export default class Index extends Component {
                             </tbody>
                         </table>
                     </Row>
-                    {/* <Row className="reportSummary">
+                    <Row className="reportSummary">
                         <h3>ODP Summary</h3>
                     </Row>
                     <Row className="reportSummary">
                         <Col className="mr-3">
                             <h2><b>Installation / Day</b></h2>
-                            <h5>12</h5>
+                            {
+                                installationDay.map(int =>(
+                                    <h5 key={int.ODP_ID}>{int.Installation}</h5>
+                                ))
+                            }
                         </Col>
                         <Col className="mr-3">
                             <h2><b>Dismantle / Day</b></h2>
-                            <h5>12</h5>
+                            <h5>{dismantlingDay}</h5>
                         </Col>
                         <Col>
                             <h2><b>Addition / Day</b></h2>
-                            <h5>12</h5>
+                            {
+                                additionDay.map(add =>(
+                                    <h5 key={add.ODP_ID}>{add.Installation}</h5>
+                                ))
+                            }
                         </Col>
-                        <table className="table table-borderless mt-2">
+                        {/* <table className="table table-borderless mt-2">
                             <tbody>
-                                <Summary /> 
+                                <Summary />  
                             </tbody>
-                        </table>
-                    </Row> */}
+                        </table> */}
+                    </Row>
                 </Container>
             </div>
         )
