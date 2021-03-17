@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col'
 // Internals
 import Map from 'components/Report-Page/Maps'
 import Data from 'components/Report-Page/Classification'
-// import Summary from 'components/Report-Page/Summary'
+import Summary from 'components/Report-Page/Summary'
 import {DataContext} from 'components/Context'
 import 'components/Report-Page/index.css'
 
@@ -186,11 +186,11 @@ export default class Index extends Component {
                                 ))
                             }
                         </Col>
-                        {/* <table className="table table-borderless mt-2">
+                        <table className="table table-borderless mt-2">
                             <tbody>
                                 <Summary />  
                             </tbody>
-                        </table> */}
+                        </table>
                     </Row>
                 </Container>
             </div>
