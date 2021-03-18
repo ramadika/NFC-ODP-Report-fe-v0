@@ -25,7 +25,7 @@ export default class index extends Component {
           },
         },
         dataLabels: {
-          enabled: false,
+          enabled: true,
         },
         stroke: {
           curve: "straight",
@@ -64,7 +64,7 @@ export default class index extends Component {
   }
   
   fetchSummary = () => {
-      fetch('http://localhost/backend-app/addition-summary.php')
+      fetch('https://103.135.5.242/backend-app/addition-summary.php')
       .then(response => {
           response.json().then(function(data) {
               if(data.success === 1){
@@ -89,24 +89,28 @@ export default class index extends Component {
   render() {
     var {summary, series, options, sumDate} = this.state;
     
+    var i = 0;
     // eslint-disable-next-line array-callback-return
     summary.map((obj) => {
 
-      sumDate = obj.Tanggal_Instalasi;
+      sumDate[i] = obj.formatted_date;
       // eslint-disable-next-line array-callback-return
       series.map((jbo) => {
         jbo.data.push(obj.Installation)
       })
+      i++;
     });
-    // // eslint-disable-next-line array-callback-return
-    // series.map((jbo) => {
-    //   jbo.data.push(sumData)
-    // })
-    // console.log(series);
-    for(var i=0;i<=sumDate.length;i++){
-      options.xaxis.categories.push(sumDate);
+    console.log(sumDate);
+    // var index = sumDate.length;
+    // while (index >= 0) {
+    //     index--;
+    //     options.xaxis.categories.push(sumDate[index]);
+    // }
+    for(var y=0; y < sumDate.length+1; y++){
+      options.xaxis.categories.push(sumDate[y]);
     }
-      console.log(options.xaxis.categories);
+    // options.xaxis.categories = options.xaxis.categories.slice(0, 10);
+    console.log(this.state.options); 
 
     return (
         <div className="d-flex justify-content-center">
