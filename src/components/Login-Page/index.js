@@ -24,7 +24,7 @@ export default class Index extends Component{
     insertUser = (event) => {
         event.preventDefault();
         event.persist();
-        Axios.post('https://103.135.5.242/backend-app/login.php',{
+        Axios.post('http://103.135.5.242/backend-app/login.php',{
             Username: this.Username.value,
             Password: this.Password.value
         })
