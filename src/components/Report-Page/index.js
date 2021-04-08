@@ -162,7 +162,7 @@ export default class Index extends Component {
                             </tbody>
                         </table>
                     </Row>
-                    <Row className="reportSummary">
+                    {/* <Row className="reportSummary">
                         <h3>ODP Summary</h3>
                     </Row>
                     <Row className="reportSummary">
@@ -191,7 +191,7 @@ export default class Index extends Component {
                                 <Summary />  
                             </tbody>
                         </table>
-                    </Row>
+                    </Row> */}
                 </Container>
             </div>
         )
